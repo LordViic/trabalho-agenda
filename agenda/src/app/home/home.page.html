@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Adicionar Contato
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup] = "contatoForm" (submit)="(editable) ? editContato() : addContato()">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Nome</ion-label>
+        <ion-input formControlName="nome" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Número</ion-label>
+        <ion-input formControlName="numero" required type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+      <div class="ion-padding">
+        <ion-button [disabled]="contatoForm.invalid" expand="block" type="submit" color="dark" class="ion-no-margin">Registrar</ion-button>
+      </div>
+    </form>
+  </ion-content>
