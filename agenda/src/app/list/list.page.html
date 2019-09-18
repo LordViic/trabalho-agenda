@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Agenda
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <table class="table table-responsive text-center">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Número</th>
+        <th colspan="2">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contato of contatos">
+        <td>{{ contato.id }}</td>
+        <td>{{ contato.nome }}</td>
+        <td>{{ contato.numero }}</td>
+        <td>
+          <button class="btn btn-outline-success btn-sm" (click)="editPerfil(contato.id)">Editar</button>
+        </td>
+        <td>
+          <button class="btn btn-outline-danger btn-sm" (click)="delPerfil(contato.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ion-content>
